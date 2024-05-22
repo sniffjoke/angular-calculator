@@ -1,0 +1,32 @@
+<div class="calculator">
+  <h2 class="calculator_title">Калькулятор</h2>
+
+  <ng-container *ngFor="let group of calcGroups">
+    <div class="calculator_container">
+      <select class="calculator_modif" [(ngModel)]="group.first.modifier">
+        <option [value]="modifier.value" *ngFor="let modifier of calcModifiers | keyvalue">
+          {{modifier.value}}
+        </option>
+      </select>
+      <input type="number" class="calculator_input" [(ngModel)]="group.first.value">
+      <select class="calculator_select" [(ngModel)]="group.operations">
+        <option [value]="operation.value" *ngFor="let operation of calcOperations | keyvalue">
+          {{operation.value}}
+        </option>
+      </select>
+      <select class="calculator_modif" [(ngModel)]="group.second.modifier">
+        <option [value]="modifier.value" *ngFor="let modifier of calcModifiers | keyvalue">
+          {{modifier.value}}
+        </option>
+      </select>
+      <input type="number" class="calculator_input" [(ngModel)]="group.second.value">
+    </div>
+  </ng-container>
+
+  <span class="calculator_result">Результат: <span>{{result ? result : 'Нажмите рассчитать!'}}</span></span>
+
+  <div>
+    <button type="button" class="calculator_btn">Рассчитать</button>
+    <button type="button" class="calculator_btn" (click)="addGroup()">Добавить группу</button>
+  </div>
+</div>
