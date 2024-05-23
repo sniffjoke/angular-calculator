@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-import {KeyValuePipe, NgForOf} from "@angular/common";
+import {KeyValuePipe, NgForOf, NgIf} from "@angular/common";
 
 interface CalcGroup {
   first: CalcVar,
@@ -30,16 +30,12 @@ enum CalcModifiers {
 @Component({
   selector: 'app-my-calculator',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgForOf, KeyValuePipe],
+  imports: [FormsModule, ReactiveFormsModule, NgForOf, KeyValuePipe, NgIf],
   templateUrl: './my-calculator.component.html',
   styleUrl: './my-calculator.component.scss'
 })
 export class MyCalculatorComponent {
 
-  // public first: number = 1
-  // public second: number = 1
-  // public operation: string = '+'
-  // public operations: string[] = ['+', '-', '/', '*']
   public calcOperations = CalcOperations
   public calcModifiers = CalcModifiers
   public calcGroups: CalcGroup[] = [
@@ -70,26 +66,12 @@ export class MyCalculatorComponent {
       },
       operations: CalcOperations.plus
     })
+
+    this.operationsBetweenGroups.push(CalcOperations.plus)
   }
   public removeGroup(index: number): void {
     this.calcGroups.splice(index, 1)
   }
-  // public calc() {
-  //   switch (this.operation) {
-  //     case '+':
-  //       this.result = this.first + this.second;
-  //       break
-  //     case '-':
-  //       this.result = this.first - this.second;
-  //       break
-  //     case '*':
-  //       this.result = this.first * this.second;
-  //       break
-  //     case '/':
-  //       this.result = this.first / this.second;
-  //       break
-  //   }
-  // }
 
 
 
