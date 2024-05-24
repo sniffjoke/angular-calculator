@@ -30,6 +30,8 @@
 
       <span>)</span>
 
+      <button *ngIf="i !== 0" (click)="removeGroup(i)">del</button>
+
     </div>
 
     <select
@@ -46,8 +48,13 @@
 
   <span class="calculator_result">Результат: <span>{{result ? result : 'Нажмите рассчитать!'}}</span></span>
 
+  <div class="calculator_history">
+    <span class="calculator_history-title">История операций:</span>
+    <span *ngFor="let obj of history; let i = index">{{ i + 1 }}. {{ obj }}</span>
+  </div>
+
   <div>
-    <button type="button" class="calculator_btn">Рассчитать</button>
+    <button type="button" class="calculator_btn" (click)="calcGroup()">Рассчитать</button>
     <button type="button" class="calculator_btn" (click)="addGroup()">Добавить группу</button>
   </div>
 </div>

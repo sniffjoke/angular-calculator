@@ -43,6 +43,18 @@
     width: 80px;
   }
 
+  &_history {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+
   &_btn {
     outline: none;
     width: fit-content;
