@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import {MyCalculatorComponent} from "./my-calculator/my-calculator.component";
+import {MyCalculatorModule} from "./components/my-calculator.module";
+import {NavigationComponent} from "./components/navigation/navigation.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MyCalculatorComponent],
+  imports: [RouterOutlet, MyCalculatorModule, NavigationComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
