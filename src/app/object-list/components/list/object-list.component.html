@@ -1,0 +1,9 @@
+<div class="object-list">
+  <div
+    *ngFor="let item of myObjects"
+    class="object-list__item"
+    (click)="redirectTo(item.id)"
+  >
+    <span>{{ item.title }}</span>
+  </div>
+</div>

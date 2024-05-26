@@ -8,6 +8,15 @@ export const routes: Routes = [
     component: MyCalculatorComponent
   },
   {
+    path: 'object-list',
+    loadChildren: () => import('./object-list/object-list.module').then((m) => m.ObjectListModule)
+  },
+  {
+    path: '',
+    redirectTo: 'calculator',
+    pathMatch: "full"
+  },
+  {
     path: '**',
     component: EmptyRouteComponent
   }
