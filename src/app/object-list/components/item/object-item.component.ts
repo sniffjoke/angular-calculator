@@ -1,4 +1,6 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute, Params} from "@angular/router";
+import {MyObject, myObjects} from "../list/object-list.component";
 
 
 @Component({
@@ -7,6 +9,16 @@ import {Component} from "@angular/core";
   styleUrls: ['object-item.component.scss']
 })
 
-export class ObjectItemComponent {
+export class ObjectItemComponent implements OnInit {
+
+  public object?: MyObject
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+      this.object = myObjects[params['id'] - 1]
+    })
+  }
 
 }
