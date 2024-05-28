@@ -1,3 +1,23 @@
-<div>
-  <span *ngFor="let color of colors">{{ color }}</span>
+<div
+  *ngFor="
+    let color of colors;
+    let i = index;
+    let first = first;
+    let last = last;
+    let count = count
+  "
+>
+  <span>{{ i }}. {{ first ? "Я первый" : "" }} {{ last ? "Я последний" : "" }} {{ color }}</span>
 </div>
+
+@for (color of colors; track color; let i = $index; let first = $first; let last = $last) {
+    <div>
+<span>{{ i }}. {{ first ? "Я первый" : "" }} {{ last ? "Я последний" : "" }} {{ color }}</span>
+</div>
+}
+
+@empty {
+<span>Пустой массив</span>
+}
+
+
