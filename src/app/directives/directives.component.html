@@ -30,12 +30,42 @@
 <!--  <span>{{ isShow }} я вывелся так как значение false</span>-->
 <!--</ng-template>-->
 
-@if(isShow) {
-{{ isShow }} я вывелся так как значение true
-}
-@else {
-<span>{{ isShow }} я вывелся так как значение false</span>
-}
+<!--@if(isShow) {-->
+<!--{{ isShow }} я вывелся так как значение true-->
+<!--}-->
+<!--@else {-->
+<!--<span>{{ isShow }} я вывелся так как значение false</span>-->
+<!--}-->
+<!--<button (click)="isShow = !isShow">{{ isShow }}</button>-->
 
-<button (click)="isShow = !isShow">{{ isShow }}</button>
+<!--@for (color of colors; track color; let i = $index; let first = $first; let last = $last) {-->
+<!--    <div>-->
+<!--<button (click)="currentColor = color">-->
+<!--{{ color }}-->
+<!--</button>-->
+<!--</div>-->
+<!--}-->
 
+<!--@empty {-->
+<!--<span>Пустой массив</span>-->
+<!--}-->
+
+<!--<div [ngSwitch]="currentColor">-->
+<!--  <span *ngSwitchCase="'red'">Выбранный цвет - Красный</span>-->
+<!--  <span *ngSwitchCase="'blue'">Выбранный цвет - Синий</span>-->
+<!--  <span *ngSwitchCase="'green'">Выбранный цвет - Зеленый</span>-->
+<!--  <span *ngSwitchCase="'yellow'">Выбранный цвет - Желтый</span>-->
+<!--</div>-->
+
+<!--@switch (currentColor) {-->
+<!--    @case ('red') {-->
+<!--      <span>Выбранный цвет красный</span>-->
+<!--    }-->
+<!--    @default {-->
+<!---->
+<!--    }-->
+<!--}-->
+
+<span [ngStyle]="elementStyle">Я - текст, измененный полем класса</span>
+<span [ngClass]="">Я - текст, измененный полем класса</span>
+<span [attr.class]="">Я - текст, измененный полем класса</span>

@@ -16,4 +16,11 @@ export class DirectivesComponent {
 
   public isShow = true
 
+  public currentColor: string = this.colors[0]
+
+  public elementStyle: any = {
+    color: 'red',
+    opacity: 0.5,
+  }
+
 }
