@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {NgFor} from "@angular/common";
+import {CommonModule, NgFor} from "@angular/common";
 
 
 @Component({
@@ -7,7 +7,7 @@ import {NgFor} from "@angular/common";
   templateUrl: 'directives.component.html',
   styleUrls: ['directives.component.scss'],
   standalone: true,
-  imports: [NgFor]
+  imports: [NgFor, CommonModule]
 })
 
 export class DirectivesComponent {

@@ -1,23 +1,41 @@
-<div
-  *ngFor="
-    let color of colors;
-    let i = index;
-    let first = first;
-    let last = last;
-    let count = count
-  "
->
-  <span>{{ i }}. {{ first ? "Я первый" : "" }} {{ last ? "Я последний" : "" }} {{ color }}</span>
-</div>
+<!--<div-->
+<!--  *ngFor="-->
+<!--    let color of colors;-->
+<!--    let i = index;-->
+<!--    let first = first;-->
+<!--    let last = last;-->
+<!--    let count = count-->
+<!--  "-->
+<!--&gt;-->
+<!--  <span>{{ i }}. {{ first ? "Я первый" : "" }} {{ last ? "Я последний" : "" }} {{ color }}</span>-->
+<!--</div>-->
 
-@for (color of colors; track color; let i = $index; let first = $first; let last = $last) {
-    <div>
-<span>{{ i }}. {{ first ? "Я первый" : "" }} {{ last ? "Я последний" : "" }} {{ color }}</span>
-</div>
+<!--@for (color of colors; track color; let i = $index; let first = $first; let last = $last) {-->
+<!--    <div>-->
+<!--<span>{{ i }}. {{ first ? "Я первый" : "" }} {{ last ? "Я последний" : "" }} {{ color }}</span>-->
+<!--</div>-->
+<!--}-->
+
+<!--@empty {-->
+<!--<span>Пустой массив</span>-->
+<!--}-->
+
+<!--<div *ngIf="isShow; else emptyState">-->
+<!--  {{ isShow }} я вывелся так как значение true-->
+<!--</div>-->
+
+<!--<button (click)="isShow = !isShow">{{ isShow }}</button>-->
+
+<!--<ng-template #emptyState>-->
+<!--  <span>{{ isShow }} я вывелся так как значение false</span>-->
+<!--</ng-template>-->
+
+@if(isShow) {
+{{ isShow }} я вывелся так как значение true
+}
+@else {
+<span>{{ isShow }} я вывелся так как значение false</span>
 }
 
-@empty {
-<span>Пустой массив</span>
-}
-
+<button (click)="isShow = !isShow">{{ isShow }}</button>
 
