@@ -72,3 +72,9 @@
 
 <!--<h2 myChangeColor>Директивы</h2>-->
 <h2 [myChangeColor]="colors">Директивы</h2>
+
+<span *myIf="isShow">{{ isShow }}</span>
+
+<br>
+
+<button (click)="isShow = !isShow">Click me!</button>

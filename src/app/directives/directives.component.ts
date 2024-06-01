@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {CommonModule, NgFor} from "@angular/common";
 import {MyChangeColorDirectiveDirective} from "./directive/my-change-color-directive.directive";
+import {MyIfDirective} from "./directive/my-if-directive.directive";
 
 
 @Component({
@@ -8,7 +9,7 @@ import {MyChangeColorDirectiveDirective} from "./directive/my-change-color-direc
   templateUrl: 'directives.component.html',
   styleUrls: ['directives.component.scss'],
   standalone: true,
-  imports: [NgFor, CommonModule, MyChangeColorDirectiveDirective]
+  imports: [NgFor, CommonModule, MyChangeColorDirectiveDirective, MyIfDirective]
 })
 
 export class DirectivesComponent {
