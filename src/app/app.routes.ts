@@ -3,6 +3,7 @@ import {MyCalculatorComponent} from "./my-calculator/components/my-calculator.co
 import {EmptyRouteComponent} from "./components/empty-route/empty-route.component";
 import {DirectivesComponent} from "./directives/directives.component";
 import {ParentComponent} from "./lifecycle/components/parent/parent/parent.component";
+import {PostListComponent} from "./requests/components/post-list/post-list.component";
 
 export const routes: Routes = [
   {
@@ -20,6 +21,10 @@ export const routes: Routes = [
   {
     path: 'life-cycle',
     component: ParentComponent
+  },
+  {
+    path: 'requests',
+    component:PostListComponent
   },
   // {
   //   path: 'object-list',
