@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {MyCalculatorModule} from "./components/my-calculator.module";
+import {MyCalculatorModule} from "./my-calculator/my-calculator.module";
 import {NavigationComponent} from "./components/navigation/navigation.component";
 
 @Component({

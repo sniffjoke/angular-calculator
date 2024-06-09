@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import {MyCalculatorComponent} from "./my-calculator/my-calculator.component";
+import {MyCalculatorComponent} from "./my-calculator/components/my-calculator.component";
 import {EmptyRouteComponent} from "./components/empty-route/empty-route.component";
 import {DirectivesComponent} from "./directives/directives.component";
+import {ParentComponent} from "./lifecycle/components/parent/parent/parent.component";
 
 export const routes: Routes = [
   {
@@ -15,6 +16,10 @@ export const routes: Routes = [
   {
     path: 'directives',
     component: DirectivesComponent
+  },
+  {
+    path: 'life-cycle',
+    component: ParentComponent
   },
   // {
   //   path: 'object-list',
