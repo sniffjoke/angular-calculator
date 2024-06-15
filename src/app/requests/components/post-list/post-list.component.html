@@ -2,9 +2,10 @@
 
 @if (posts$ | async; as posts) {
     @for (post of posts; track post.id) {
-        <div class="post">
+        <div class="post" (click)="redirectTo(post.id)">
           <span class="post__title">{{ post.title }}</span>
           <span class="post__content">{{ post.body }}</span>
         </div>
     }
 }
+

@@ -1,1 +1,14 @@
-<p>post-item works!</p>
+<!--@if (comments$ | async; as comments) {-->
+<!--    @for (comment of comments; track comment.id) {-->
+<!--        <div>-->
+<!--          <span>{{comment.id}}</span>-->
+<!--        </div>-->
+<!--    }-->
+<!--}-->
+
+<h3>Comment</h3>
+
+<div>
+  <span>{{ postComment?.body }}</span>
+</div>
+
