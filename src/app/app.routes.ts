@@ -4,6 +4,7 @@ import {EmptyRouteComponent} from "./components/empty-route/empty-route.componen
 import {DirectivesComponent} from "./directives/directives.component";
 import {ParentComponent} from "./lifecycle/components/parent/parent/parent.component";
 import {PipesComponent} from "./pipes/components/pipes/pipes.component";
+import {FormsComponent} from "./forms/components/forms/forms.component";
 
 export const routes: Routes = [
   {
@@ -30,6 +31,10 @@ export const routes: Routes = [
   {
     path: 'pipes',
     component: PipesComponent
+  },
+  {
+    path: 'forms',
+    component: FormsComponent
   },
   // {
   //   path: 'object-list',
