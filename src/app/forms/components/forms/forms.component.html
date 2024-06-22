@@ -8,14 +8,14 @@
     }
   </div>
   <div>
-    <label for="email">Login</label>
+    <label for="email">Email</label>
     <input type="email" id="email" formControlName="email">
     @if (!myForm.controls.email.valid && myForm.controls.email.touched) {
     <small style="color: red">Это поле обязательно для заполнения</small>
     }
   </div>
   <div>
-    <label for="password">Login</label>
+    <label for="password">Password</label>
     <input type="password" id="password" formControlName="password">
     @if (!myForm.controls.password.valid && myForm.controls.password.touched) {
     <small style="color: red">Это поле обязательно для заполнения</small>
@@ -33,4 +33,17 @@
     <small style="color: red">Неправильно введены данные</small>
     }
   </div>
+  <div>
+    <label for="password_one">Введите пароль</label>
+    <input type="password" id="password_one" formControlName="password_one">
+  </div>
+  <div>
+    <label for="password_two">Введите пароль еще раз</label>
+    <input type="password" id="password_two" formControlName="password_two">
+  </div>
+  @if (validatorsForm.errors?.['PasswordDoNotMatch']) {
+        <div>
+            <span style="color: red">Пароли не совпадают</span>
+        </div>
+  }
 </div>
