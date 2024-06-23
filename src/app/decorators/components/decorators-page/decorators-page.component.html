@@ -1,35 +1,43 @@
 <div class="block">
-  <h2>Ng-container & Ng-template</h2>
-  @for (item of arr; track $index) {
-  <span>{{ item }}</span>
-  }
+  <app-child-decorator>
+    <p #paragraph>Content works!</p>
+    <p #paragraph>Content works!</p>
+    <p #paragraph>Content works!</p>
+  </app-child-decorator>
+</div>
 
-  <p>First</p>
-<!--  <p *ngIf="isShow; else second">Second true</p>-->
-<!--  @if (isShow) {-->
-<!--  <p>Second true</p>-->
-<!--  } @else {-->
-<!--    Second false-->
+<!--<div class="block">-->
+<!--  <h2>Ng-container & Ng-template</h2>-->
+<!--  @for (item of arr; track $index) {-->
+<!--  <span>{{ item }}</span>-->
 <!--  }-->
-  <ng-container *ngTemplateOutlet="second; context: {$implicit: 'Hello world', someText: 'Lorem ipsum'}"></ng-container>
-  <p>Third</p>
-<!--  <ng-container *ngTemplateOutlet="second"></ng-container>-->
-  <button (click)="isShow = !isShow">Click me!</button>
 
-  <ng-template #second let-title let-someText="someText">
-    <p>{{ someText }}</p>
-<!--    <p>Second false</p>-->
-    <p>{{ title }}</p>
-    <p>Second</p>
-  </ng-template>
-</div>
+<!--  <p>First</p>-->
+<!--&lt;!&ndash;  <p *ngIf="isShow; else second">Second true</p>&ndash;&gt;-->
+<!--&lt;!&ndash;  @if (isShow) {&ndash;&gt;-->
+<!--&lt;!&ndash;  <p>Second true</p>&ndash;&gt;-->
+<!--&lt;!&ndash;  } @else {&ndash;&gt;-->
+<!--&lt;!&ndash;    Second false&ndash;&gt;-->
+<!--&lt;!&ndash;  }&ndash;&gt;-->
+<!--  <ng-container *ngTemplateOutlet="second; context: {$implicit: 'Hello world', someText: 'Lorem ipsum'}"></ng-container>-->
+<!--  <p>Third</p>-->
+<!--&lt;!&ndash;  <ng-container *ngTemplateOutlet="second"></ng-container>&ndash;&gt;-->
+<!--  <button (click)="isShow = !isShow">Click me!</button>-->
 
-<div class="block">
-  <p #paragraph>Lorem Ipsum</p>
-  <ng-template #paragraphTemplate>
-    <p>Ipsum Lorem</p>
-  </ng-template>
-  <ng-container *ngTemplateOutlet="paragraphTemplate"></ng-container>
+<!--  <ng-template #second let-title let-someText="someText">-->
+<!--    <p>{{ someText }}</p>-->
+<!--&lt;!&ndash;    <p>Second false</p>&ndash;&gt;-->
+<!--    <p>{{ title }}</p>-->
+<!--    <p>Second</p>-->
+<!--  </ng-template>-->
+<!--</div>-->
 
-  <app-child-decorator></app-child-decorator>
-</div>
+<!--<div class="block">-->
+<!--  <p #paragraph>Lorem Ipsum</p>-->
+<!--  <ng-template #paragraphTemplate>-->
+<!--    <p>Ipsum Lorem</p>-->
+<!--  </ng-template>-->
+<!--  <ng-container *ngTemplateOutlet="paragraphTemplate"></ng-container>-->
+
+<!--  <app-child-decorator></app-child-decorator>-->
+<!--</div>-->

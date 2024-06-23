@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterContentInit, Component, ContentChildren, ElementRef, QueryList} from '@angular/core';
 
 @Component({
   selector: 'app-child-decorator',
@@ -7,8 +7,15 @@ import { Component } from '@angular/core';
   templateUrl: './child-decorator.component.html',
   styleUrl: './child-decorator.component.scss'
 })
-export class ChildDecoratorComponent {
-  public title = 'Hello'
+export class ChildDecoratorComponent implements AfterContentInit {
+  // public title = 'Hello'
 
-  private second = 'World'
+  // private second = 'World'
+
+  @ContentChildren('paragraph') paragraph!: QueryList<ElementRef<HTMLParagraphElement>>
+
+  public ngAfterContentInit() {
+    this.paragraph && console.log(this.paragraph)
+  }
+
 }

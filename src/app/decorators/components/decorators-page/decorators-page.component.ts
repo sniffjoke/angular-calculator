@@ -24,17 +24,16 @@ export class DecoratorsPageComponent implements AfterViewInit {
 
   public isShow = true
 
-  @ViewChild('paragraph, sddf', {read: ''}) paragraph?: ElementRef<HTMLParagraphElement>;
+  @ViewChild('paragraph', {read: ''}) paragraph?: ElementRef<HTMLParagraphElement>;
   @ViewChild('paragraphTemplate') paragraphTemplate?: TemplateRef<HTMLParagraphElement>;
   @ViewChild(ChildDecoratorComponent) childComponent?: ChildDecoratorComponent;
 
   @ViewChildren(ChildDecoratorComponent) childComponents?: QueryList<ChildDecoratorComponent>
 
   public ngAfterViewInit() {
-    console.log(this.paragraph)
-    console.log(this.paragraphTemplate)
-    console.log(this.childComponent)
-
-    console.log(this.childComponents)
+    // console.log(this.paragraph)
+    // console.log(this.paragraphTemplate)
+    // console.log(this.childComponent)
+    // console.log(this.childComponents)
   }
 }
