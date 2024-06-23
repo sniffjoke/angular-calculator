@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {
-  AbstractControl,
+  AbstractControl, FormArray, FormBuilder,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -31,7 +31,15 @@ export const confirmPassword: ValidatorFn = (
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.scss'
 })
+
 export class FormsComponent implements OnInit {
+
+  constructor(private _fb: FormBuilder) {}
+
+  public get skills(): FormArray {
+    return this.fbForm.get('skills') as FormArray
+  }
+
   public myForm = new FormGroup({
     login: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -50,6 +58,15 @@ export class FormsComponent implements OnInit {
     confirmPassword
   )
 
+  public fbForm = this._fb.group({
+    name: ['Vasya'],
+    skills: this._fb.array([])
+    // place: this._fb.group({
+    //   city: [''],
+    //   time: ['']
+    // })
+  })
+
   public ngOnInit() {
   }
 
@@ -60,6 +77,25 @@ export class FormsComponent implements OnInit {
       console.log('Форма не валидна')
     }
     // console.log(this.myForm.get(['login'])?.value)
+  }
+
+  public newSkill(): FormGroup {
+    return this._fb.group({
+      skill: '',
+      experience: ''
+    })
+  }
+
+  public addSkill(): void {
+    this.skills.push(this.newSkill())
+  }
+
+  public removeSkill(i: number): void {
+    this.skills.removeAt(i)
+  }
+
+  public onSubmit() {
+    console.log(this.fbForm.value)
   }
 
 }

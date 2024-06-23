@@ -16,4 +16,14 @@
     }
   }
 
+  &__array {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+}
+
+hr {
+  margin: 20px 0;
 }

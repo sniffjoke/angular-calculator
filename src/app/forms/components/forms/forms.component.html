@@ -24,6 +24,8 @@
   <button (click)="handleValue()" [disabled]="!myForm.valid">Send value</button>
 </div>
 
+<hr>
+
 <div class="login-form" [formGroup]="validatorsForm">
   <h2>Custom validators</h2>
   <div>
@@ -47,3 +49,29 @@
         </div>
   }
 </div>
+
+<hr>
+
+<form class="login-form" [formGroup]="fbForm" (ngSubmit)="onSubmit()">
+  <h2>Custom validators FormBuilder</h2>
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+
+  <div formArrayName="skills" class="login-form__array">
+
+    @for (skill of skills.controls; track skill; let i = $index) {
+        <div [formGroupName]="i">
+            <label [for]="i + 'skill'">{{ i + 1 }} | Skill</label>
+            <input [id]="i + 'skill'" type="text" formControlName="skill">
+            <label [for]="i + 'experience'">Experience</label>
+            <input [id]="i + 'experience'" type="text" formControlName="experience">
+            <button (click)="removeSkill(i)">Delete</button>
+        </div>
+    }
+  </div>
+
+  <button type="button" (click)="addSkill()">Add skill</button>
+  <button type="submit">Submit</button>
+</form>
