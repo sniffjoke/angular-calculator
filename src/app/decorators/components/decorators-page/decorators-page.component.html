@@ -23,3 +23,13 @@
     <p>Second</p>
   </ng-template>
 </div>
+
+<div class="block">
+  <p #paragraph>Lorem Ipsum</p>
+  <ng-template #paragraphTemplate>
+    <p>Ipsum Lorem</p>
+  </ng-template>
+  <ng-container *ngTemplateOutlet="paragraphTemplate"></ng-container>
+
+  <app-child-decorator></app-child-decorator>
+</div>
