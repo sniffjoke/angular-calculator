@@ -5,6 +5,7 @@ import {DirectivesComponent} from "./directives/directives.component";
 import {ParentComponent} from "./lifecycle/components/parent/parent/parent.component";
 import {PipesComponent} from "./pipes/components/pipes/pipes.component";
 import {FormsComponent} from "./forms/components/forms/forms.component";
+import {DecoratorsPageComponent} from "./decorators/components/decorators-page/decorators-page.component";
 
 export const routes: Routes = [
   {
@@ -35,6 +36,10 @@ export const routes: Routes = [
   {
     path: 'forms',
     component: FormsComponent
+  },
+  {
+    path: 'decorators',
+    component: DecoratorsPageComponent
   },
   // {
   //   path: 'object-list',
