@@ -11,6 +11,7 @@ import {
   Validators
 } from "@angular/forms";
 import {CommonModule} from "@angular/common";
+import {RateComponent, RateOptions} from "../rate/rate.component";
 
 export function checkRegExp(regExp: RegExp): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -37,7 +38,8 @@ interface TemplateFormI {
   imports: [
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    RateComponent
   ],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.scss'
@@ -83,6 +85,15 @@ export class FormsComponent implements OnInit {
     //   time: ['']
     // })
   })
+
+  public customForm = this._fb.group({
+    rate: [4]
+  })
+
+  public ratesOptions: RateOptions = {
+    rates: 10,
+    text: 'Оцените наш курс по Angular'
+  }
 
   public ngOnInit() {
   }

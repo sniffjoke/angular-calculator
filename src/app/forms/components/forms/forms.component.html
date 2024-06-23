@@ -76,6 +76,8 @@
   <button type="submit">Submit</button>
 </form>
 
+<hr>
+
 <div class="login-form">
   <h2>Template Driven Forms </h2>
   <pre>{{ templateForm | json }}</pre>
@@ -92,4 +94,14 @@
     <label for="templatePassword">Password</label>
     <input id="templatePassword" type="password" [(ngModel)]="templateForm.password">
   </div>
+</div>
+
+<hr>
+
+<div class="login-form" [formGroup]="customForm">
+
+  <h2>Custom Control</h2>
+  <pre>{{ customForm.value | json }}</pre>
+
+  <app-rate formControlName="rate" [options]="ratesOptions"></app-rate>
 </div>

@@ -5,6 +5,9 @@
   gap: 20px;
   justify-content: center;
   width: 50vw;
+  border: none;
+  padding: 0 20px;
+
 
   div {
     width: 100%;
@@ -12,7 +15,7 @@
     gap: 15px;
 
     label {
-      width: 1600px;
+      width: 160px;
     }
   }
 
@@ -25,5 +28,5 @@
 }
 
 hr {
-  margin: 20px 0;
+  margin: 10px 0;
 }
