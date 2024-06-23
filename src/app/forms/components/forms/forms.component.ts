@@ -1,13 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {
-  AbstractControl, FormArray, FormBuilder,
+  AbstractControl,
+  FormArray,
+  FormBuilder,
   FormControl,
-  FormGroup,
+  FormGroup, FormsModule,
   ReactiveFormsModule,
   ValidationErrors,
   ValidatorFn,
   Validators
 } from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 export function checkRegExp(regExp: RegExp): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -22,17 +25,31 @@ export const confirmPassword: ValidatorFn = (
   return control.value.password_one === control.value.password_two ? null : {PasswordDoNotMatch: true}
 }
 
+interface TemplateFormI {
+  login: string
+  email: string
+  password: string
+}
+
 @Component({
   selector: 'app-forms',
   standalone: true,
   imports: [
     ReactiveFormsModule,
+    FormsModule,
+    CommonModule
   ],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.scss'
 })
 
 export class FormsComponent implements OnInit {
+
+  public templateForm: TemplateFormI = {
+    login: 'Boria',
+    email: '',
+    password: ''
+  }
 
   constructor(private _fb: FormBuilder) {}
 
