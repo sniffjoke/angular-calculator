@@ -14,11 +14,11 @@ import {MyIfDirective} from "./directive/my-if-directive.directive";
 
 export class DirectivesComponent {
 
-  public colors: string[] = ['red', 'blue', 'green', 'yellow']
+  // public colors: string[] = ['red', 'blue', 'green', 'yellow']
 
   public isShow = true
 
-  public currentColor: string = this.colors[0]
+  // public currentColor: string = this.colors[0]
 
   public elementStyle: any = {
     color: 'red',
