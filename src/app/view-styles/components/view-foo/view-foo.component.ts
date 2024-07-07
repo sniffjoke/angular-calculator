@@ -1,5 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {ViewBarComponent} from "../view-bar/view-bar.component";
+import {UserService} from "../../../user.service";
 
 @Component({
   selector: 'app-view-foo',
@@ -15,5 +16,10 @@ import {ViewBarComponent} from "../view-bar/view-bar.component";
   encapsulation: ViewEncapsulation.None
 })
 export class ViewFooComponent {
+  constructor(private _userService: UserService) {}
+
+  public login(): void {
+    this._userService.login()
+  }
 
 }

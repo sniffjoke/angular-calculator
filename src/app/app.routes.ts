@@ -7,11 +7,15 @@ import {PipesComponent} from "./pipes/components/pipes/pipes.component";
 import {FormsComponent} from "./forms/components/forms/forms.component";
 import {DecoratorsPageComponent} from "./decorators/components/decorators-page/decorators-page.component";
 import {ViewFooComponent} from "./view-styles/components/view-foo/view-foo.component";
+import {isLoggedGuardFn} from "./is-logged.guard";
 
 export const routes: Routes = [
   {
     path: 'calculator',
-    component: MyCalculatorComponent
+    component: MyCalculatorComponent,
+    canDeactivate: [
+      (component: MyCalculatorComponent) => !component.canLeave
+    ]
   },
   {
     path: 'object-list',
@@ -28,7 +32,8 @@ export const routes: Routes = [
   {
     path: 'requests',
     // component:PostListComponent
-    loadChildren: () => import('./requests/request-routing.module').then((m) => m.RequestRouting)
+    loadChildren: () => import('./requests/request-routing.module').then((m) => m.RequestRouting),
+    canActivate: [isLoggedGuardFn],
   },
   {
     path: 'pipes',
@@ -44,7 +49,7 @@ export const routes: Routes = [
   },
   {
     path: 'styles',
-    component: ViewFooComponent
+    component: ViewFooComponent,
   },
   // {
   //   path: 'object-list',

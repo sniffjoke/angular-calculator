@@ -36,6 +36,8 @@ enum CalcModifiers {
 })
 export class MyCalculatorComponent {
 
+  public canLeave: boolean = false;
+
   public calcOperations = CalcOperations
   public calcModifiers = CalcModifiers
   public calcGroups: CalcGroup[] = [
