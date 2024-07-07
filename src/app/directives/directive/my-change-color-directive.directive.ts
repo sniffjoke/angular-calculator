@@ -33,8 +33,7 @@ export class MyChangeColorDirectiveDirective implements AfterViewInit {
     this.background = 'transparent'
   }
 
-  constructor() {
-  }
+  constructor() {}
 
   ngAfterViewInit(): void {
     // this.changeColor(this._el)

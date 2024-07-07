@@ -1,0 +1,10 @@
+:host {
+  background-color: red;
+  display: block;
+  border: 2px solid peru;
+  width: 600px;
+}
+
+:host(.pink) {
+  color: pink;
+}

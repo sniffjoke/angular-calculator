@@ -6,6 +6,7 @@ import {ParentComponent} from "./lifecycle/components/parent/parent/parent.compo
 import {PipesComponent} from "./pipes/components/pipes/pipes.component";
 import {FormsComponent} from "./forms/components/forms/forms.component";
 import {DecoratorsPageComponent} from "./decorators/components/decorators-page/decorators-page.component";
+import {ViewFooComponent} from "./view-styles/components/view-foo/view-foo.component";
 
 export const routes: Routes = [
   {
@@ -40,6 +41,10 @@ export const routes: Routes = [
   {
     path: 'decorators',
     component: DecoratorsPageComponent
+  },
+  {
+    path: 'styles',
+    component: ViewFooComponent
   },
   // {
   //   path: 'object-list',
